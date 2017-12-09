@@ -50,7 +50,9 @@ nav a:hover {
   cursor: pointer;
 }
 
-
+ul {
+   list-style-type: circle;
+}
 
 .social:hover {
   cursor: pointer;

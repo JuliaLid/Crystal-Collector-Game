@@ -22,14 +22,18 @@ var counter = 0;
 	  		while(crystalValues.indexOf(nextNumber) !== -1) {
 	  			nextNumber = Math.floor(Math.random()*(12-1+1)+1);
 	  		}
-				crystalValues.push(nextNumber);
-				$("img").attr("data-crystal",crystalValues[i]);
+	  			crystalValues.push(nextNumber);
+				// $("img").attr("data-crystal",crystalValues[i]);
 			}
+			// var names = [ "Jon", "Nick", "Bill", "Tom" ];
+			$('.crystal-image').each(function (i) {
+ 			$(this).attr("data-crystal",crystalValues[i]);
+});
 	};
 
 	 	// assign a random number to each image as attr "data-crystalValue"//
 
-				//not working fo loop
+				//not working for loop
 				// function assignNumbers() {
 				// 	for(var j=0;j< crystalValues.length; j++) {
 				// 	$(".crystal-image").attr("data-crystal",crystalValues[j]);
@@ -42,6 +46,9 @@ var counter = 0;
 					// 				}));
 					// 			};
 
+				jQuery.each( crystalValues, function( i, val ) {
+  				$(".crystal-image").attr("data-crystal",crystalValues[i]);
+  			});
 
 targetNumber();
 crystalNumbers();
