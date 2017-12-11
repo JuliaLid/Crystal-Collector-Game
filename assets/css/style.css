@@ -18,6 +18,7 @@ body {
 ul {
    list-style-type: circle;
     font-family: 'Raleway', sans-serif;
+    font-size: 0.9em;
 }
 
 .wrapper {
@@ -94,7 +95,7 @@ ul {
 }
 
 #rules {
-  grid-column: 7/11;
+  grid-column: 7/12;
   grid-row: 3;
   border: 1px solid black;
   padding: 20px 5px 10px 30px;
