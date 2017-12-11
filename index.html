@@ -5,73 +5,57 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Shoes Collector</title>
 	<link rel="stylesheet" href="assets/css/reset.css">
-	<!-- <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Dosis:700|Pacifico" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway|Rouge+Script" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/style.css">
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 </head>
  	<body>
-	 	<header id="masthead">
-	 		<div class="container">
-	 			<h1>Shoes Collector</h1>
-			</div>
-	 	</header>
-	 
+	 	 
 		 <div class="wrapper">
-			<div id="main-container" class="container">
-				<section class="main-section">
-					<div class="crystal">
-						<img class="crystal-image" src="assets/images/shoe-1.jpg" alt="Crystal" >
+		 	<div id="header">
+		 		<h1>Shoe Collector</h1>
+		 	</div>
+			<div id="images" >
+					<div id ="shoe1">
+						<img class="shoe-image" src="assets/images/shoe-1.jpg" alt="Shoes" >
 					</div>
-					<div id="crystal">
-						<img class="crystal-image" src="assets/images/shoe-2.jpg" alt="Crystal" >
+					<div id ="shoe2">
+						<img class="shoe-image" src="assets/images/shoe-2.jpg" alt="Shoes" >
 					</div>
-					<div id="crystal">
-						<img class="crystal-image" src="assets/images/shoe-3.jpg" alt="Crystal" >
+					<div id ="shoe3">
+						<img class="shoe-image" src="assets/images/shoe-3.jpg" alt="Shoes" >
 					</div>
-					<div id="crystal">
-						<img class="crystal-image" src="assets/images/shoe-4.jpg" alt="Crystal" >
+					<div id =shoe4">
+						<img class="shoe-image" src="assets/images/shoe-4.jpg" alt="Shoes" >
 					</div>
-					</section>
-					<section>
-					<div id="score">
-						<h4>Target Score</h4>
+				</div>
+				<div id="stats">
+					<h3>Target Score</h3>
 						<p id="scoreDisplay"></p>
-						<h4>Your Score</h4>
+						<h3>Your Score</h3>
 						<p id="userScore"></p>
-					</div>
-
-					<div id="stats">
-						<h6>Wins:</h6>
+				</div>	
+				<div id="outcome">
+						<h3>Wins:</h3>
 						<p id=win> </p>
-						<h6>Losses:</h6>
+						<h3>Losses:</h3>
 						<p id="loss"> </p>
-					</div>
-					<!-- <div class="button">
-						<button id="reset" >Play Again</button>
-					</div> -->
-				</section>	
-			
-			<section class="sidebar">
+				</div>
+										
 				<div id="rules">
 					<h2>Game Rules</h2>
 					<ul>
 						<li>You will receive a random target score.</li>
 						<li>Every sparkly pair of shoes has a random number assigned to it. </li>
-						<li>Winning is simple - match the target score by clicking on the images of shoes. If you go over, you lose. </li>
-						<li>The value of each pair of shoes is hidden from you, so pay attention!</li>
+						<li>Winning is simple - match the target score by clicking on the images of shoes. </li>
+						<li> If you go over, you lose. </li>
+						<li>The value of each pair of shoes is hidden from you, so pay attention to your score!</li>
 					</ul>
 				</div>
-			</section>
-		</div>			
+			
+				
 	</div>		
-	<!-- <div>
-		<div id="message-win"> You win!</div>
-		<div id="message-loss"> You lose!</div>
-	</div> -->
-	<!-- <div class="button">
-			<button id="reset" onClick="gameReset()">Play Again</button>
-				</div> -->
 	<script src="assets/javascript/game.js"></script>
 	</body>
 </html>

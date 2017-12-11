@@ -1,84 +1,64 @@
-var targetScore;
-var	winCount =0;
+var targetScore;		//randomly generated score
+var	winCount =0;		
 var	lossCount = 0;
-var crystalValues = [];
+var shoeValues = [];	//array to store random values
 var counter = 0;
 
 
 //function to determine the random target number
 		function targetNumber() {
 		targetScore = Math.floor(Math.random()*(120-19+1)+19);
-		console.log(targetScore);
 		 $("#scoreDisplay").text(targetScore);
+		 $("#userScore").text(counter);
 	};
 		
 
-//function to determine 4 random, non-repeating numbers - one for each crystal 
+//function to determine 4 random, non-repeating numbers - one for each pair of shoes 
 
  	function crystalNumbers(){
 	  	for (i=0; i<4; i++) {
 	  		var nextNumber = Math.floor(Math.random()*(12-1+1)+1);
 
-	  		while(crystalValues.indexOf(nextNumber) !== -1) {
+	  		while(shoeValues.indexOf(nextNumber) !== -1) {
 	  			nextNumber = Math.floor(Math.random()*(12-1+1)+1);
 	  		}
-	  			crystalValues.push(nextNumber);
-				// $("img").attr("data-crystal",crystalValues[i]);
+	  			shoeValues.push(nextNumber);
 			}
-			// var names = [ "Jon", "Nick", "Bill", "Tom" ];
-			$('.crystal-image').each(function (i) {
- 			$(this).attr("data-crystal",crystalValues[i]);
-});
+			
+			$('.shoe-image').each(function (i) {
+	 		$(this).attr("data-shoe",shoeValues[i]);
+		});
 	};
 
-	 	// assign a random number to each image as attr "data-crystalValue"//
+	//calling functions
+	targetNumber();
+	crystalNumbers();
 
-				//not working for loop
-				// function assignNumbers() {
-				// 	for(var j=0;j< crystalValues.length; j++) {
-				// 	$(".crystal-image").attr("data-crystal",crystalValues[j]);
-				// 	}
-				// }
 
-				//working function but not assigning number
-					// $ .each($(".crystal-image"),(function(index){
-					// 					$(this).attr("data-crystal",crystalValues[i]);
-					// 				}));
-					// 			};
-
-				jQuery.each( crystalValues, function( i, val ) {
-  				$(".crystal-image").attr("data-crystal",crystalValues[i]);
-  			});
-
-targetNumber();
-crystalNumbers();
-console.log(crystalValues)
-$("#userScore").text(counter);
 
 //onlcick function for assigning random numbers to each image
+	//add animation for each image 
 	//increment user's score accordingly
-	$(".crystal-image").on("click", function() {
+	$(".shoe-image").on("click", function() {
+		 
+		  $(this).effect("bounce", {times: 1}, 400);
 		
-		var crystalValueNum = ($(this).attr("data-crystal"));
-   		 crystalValueNum = parseInt( crystalValueNum);
-   		 counter += crystalValueNum;
+		 var shoeValueNum = ($(this).attr("data-shoe"));
+   		 shoeValueNum = parseInt( shoeValueNum);
+   		 counter += shoeValueNum;
    		  $("#userScore").text(counter);
 
-   		 console.log("Score:" + counter);
-
+   	
    		 if (counter === targetScore) {
    		 	winCount +=1;
-   		 	console.log("you win!");
-   		 	$ ("#win").text(winCount);
+   		  	$ ("#win").text(winCount);
    		 	gameReset();
    		 } else if (counter >= targetScore){
    		 	lossCount +=1;
-   		 	console.log ("You lose!");
    		 	$ ("#loss").text(lossCount);
    		 	gameReset();
    		 };
    	});
-
 
 
 //reset to trigger the new random score and numbers
@@ -89,5 +69,4 @@ function gameReset(){
 	$("#userScore").text("");
 	targetNumber();
  	crystalNumbers();
-
 };
