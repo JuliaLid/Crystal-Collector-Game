@@ -1,15 +1,19 @@
+//Declare global variables
+//==============================================
 var targetScore;		//randomly generated score
 var	winCount =0;		
 var	lossCount = 0;
 var shoeValues = [];	//array to store random values
 var counter = 0;
 
-
+//Functions
+//================================================
 //function to determine the random target number
 		function targetNumber() {
 		targetScore = Math.floor(Math.random()*(120-19+1)+19);
-		 $("#scoreDisplay").text(targetScore);
-		 $("#userScore").text(counter);
+		
+		$("#scoreDisplay").text(targetScore);
+		$("#userScore").text(counter);
 	};
 		
 
@@ -30,10 +34,12 @@ var counter = 0;
 		});
 	};
 
-	//calling functions
+
+//Gameplay
+//==================================================
+	//calling functions to initialize the game
 	targetNumber();
 	crystalNumbers();
-
 
 
 //onlcick function for assigning random numbers to each image
@@ -46,7 +52,7 @@ var counter = 0;
 		 var shoeValueNum = ($(this).attr("data-shoe"));
    		 shoeValueNum = parseInt( shoeValueNum);
    		 counter += shoeValueNum;
-   		  $("#userScore").text(counter);
+   		 $("#userScore").text(counter);
 
    	
    		 if (counter === targetScore) {
@@ -61,7 +67,7 @@ var counter = 0;
    	});
 
 
-//reset to trigger the new random score and numbers
+//reset to trigger the new random score and numbers for images
 	//keep the win and loss count going
 function gameReset(){
 	targetScore = 0;
