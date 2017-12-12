@@ -41,7 +41,7 @@ var counter = 0;
 	//increment user's score accordingly
 	$(".shoe-image").on("click", function() {
 		 
-		  $(this).effect("bounce", {times: 1}, 400);
+		  $(this).effect("bounce", {times: 1}, 200);
 		
 		 var shoeValueNum = ($(this).attr("data-shoe"));
    		 shoeValueNum = parseInt( shoeValueNum);
